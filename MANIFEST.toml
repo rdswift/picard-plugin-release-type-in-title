@@ -1,0 +1,17 @@
+uuid = "d5905c27-7ec2-41c1-bd08-70c38a4fa7fc"
+name = "Release Type in Title"
+authors = ["Bob Swift"]
+description = "This plugin automatically places selected release type information in the title of the release."
+api = ['3.0']
+license = "GPL-2.0-or-later"
+license_url = "https://www.gnu.org/licenses/gpl-2.0.html"
+long_description = """
+This plugin automatically places selected release type information in the title of the release. It is based on the Picard 2 plugin "Release Type" by Elliot Chance.
+
+The plugin checks the existing release title to determine whether the release type already appears in the title. If not, and the release type is one of those selected for inclusion, the release type is added to the release title.
+
+The release types to include, and the text to add are defined by the user in the plugin's option settings.
+"""
+categories = ["metadata"]
+homepage = "https://picard-plugins-user-guides.readthedocs.io/en/latest/release_type_in_title/user_guide.html"
+report_bugs_to = "https://github.com/rdswift/picard-plugin-release-type-in-title/issues"
