@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>456</width>
-    <height>420</height>
+    <height>579</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -90,10 +90,45 @@
     </widget>
    </item>
    <item>
-    <layout class="QFormLayout" name="formLayout">
+    <layout class="QGridLayout" name="gridLayout">
      <property name="topMargin">
       <number>0</number>
      </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>3</number>
+     </property>
+     <item row="4" column="2">
+      <widget class="QLineEdit" name="words_single"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="add_text_single"/>
+     </item>
+     <item row="14" column="2">
+      <widget class="QLineEdit" name="words_remix"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QCheckBox" name="cb_single">
+       <property name="text">
+        <string>option.single.title</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>label.append_text</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="add_text_ep"/>
+     </item>
      <item row="0" column="0">
       <widget class="QCheckBox" name="cb_ep">
        <property name="text">
@@ -101,58 +136,247 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="add_text_ep"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QCheckBox" name="cb_single">
+     <item row="10" column="1">
+      <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>option.single.title</string>
+        <string>label.words_to_check</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="add_text_single"/>
+     <item row="14" column="1">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>label.words_to_check</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
      </item>
-     <item row="2" column="0">
+     <item row="16" column="2">
+      <widget class="QLineEdit" name="add_text_demo"/>
+     </item>
+     <item row="15" column="2">
+      <spacer name="verticalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>9</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>label.words_to_check</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>label.words_to_check</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="2">
+      <widget class="QLineEdit" name="words_live"/>
+     </item>
+     <item row="6" column="2">
+      <widget class="QLineEdit" name="add_text_soundtrack"/>
+     </item>
+     <item row="8" column="2">
+      <spacer name="verticalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>9</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>label.words_to_check</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
       <widget class="QCheckBox" name="cb_soundtrack">
        <property name="text">
         <string>option.soundtrack.title</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="add_text_soundtrack"/>
+     <item row="12" column="2">
+      <widget class="QLineEdit" name="add_text_remix"/>
      </item>
-     <item row="3" column="0">
-      <widget class="QCheckBox" name="cb_live">
-       <property name="text">
-        <string>option.live.title</string>
+     <item row="2" column="2">
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QCheckBox" name="cb_remix">
-       <property name="text">
-        <string>option.remix.title</string>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
        </property>
-      </widget>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>9</height>
+        </size>
+       </property>
+      </spacer>
      </item>
-     <item row="5" column="0">
+     <item row="11" column="2">
+      <spacer name="verticalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>9</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="5" column="2">
+      <spacer name="verticalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>1</width>
+         <height>9</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="16" column="0">
       <widget class="QCheckBox" name="cb_demo">
        <property name="text">
         <string>option.demo.title</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="12" column="0">
+      <widget class="QCheckBox" name="cb_remix">
+       <property name="text">
+        <string>option.remix.title</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QCheckBox" name="cb_live">
+       <property name="text">
+        <string>option.live.title</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="words_ep"/>
+     </item>
+     <item row="9" column="2">
       <widget class="QLineEdit" name="add_text_live"/>
      </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="add_text_remix"/>
+     <item row="7" column="2">
+      <widget class="QLineEdit" name="words_soundtrack"/>
      </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="add_text_demo"/>
+     <item row="17" column="2">
+      <widget class="QLineEdit" name="words_demo"/>
+     </item>
+     <item row="17" column="1">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>label.words_to_check</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>label.append_text</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>label.append_text</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>label.append_text</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>label.append_text</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="1">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>label.append_text</string>
+       </property>
+       <property name="indent">
+        <number>20</number>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -174,16 +398,22 @@
  <tabstops>
   <tabstop>cb_ep</tabstop>
   <tabstop>add_text_ep</tabstop>
+  <tabstop>words_ep</tabstop>
   <tabstop>cb_single</tabstop>
   <tabstop>add_text_single</tabstop>
+  <tabstop>words_single</tabstop>
   <tabstop>cb_soundtrack</tabstop>
   <tabstop>add_text_soundtrack</tabstop>
+  <tabstop>words_soundtrack</tabstop>
   <tabstop>cb_live</tabstop>
   <tabstop>add_text_live</tabstop>
+  <tabstop>words_live</tabstop>
   <tabstop>cb_remix</tabstop>
   <tabstop>add_text_remix</tabstop>
+  <tabstop>words_remix</tabstop>
   <tabstop>cb_demo</tabstop>
   <tabstop>add_text_demo</tabstop>
+  <tabstop>words_demo</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -34,16 +34,6 @@ from .ui_options_release_type_in_title import Ui_ReleaseTypeInTitleOptionsPage
 
 USER_GUIDE_URL = 'https://picard-plugins-user-guides.readthedocs.io/en/latest/release_type_in_title/user_guide.html'
 
-# Words to check for processing (in lower case)
-RELEASE_TYPE_MAPPING = {
-    'ep': ("ep", "e.p."),
-    'single': ("single",),
-    'soundtrack': ("soundtrack",),
-    'live': ("live",),
-    'remix': ("remix",),
-    'demo': ("demo",),
-}
-
 
 class ReleaseTypeInTitleOptionsPage(OptionsPage):
 
@@ -70,6 +60,13 @@ class ReleaseTypeInTitleOptionsPage(OptionsPage):
         self.ui.add_text_remix.setEnabled(self.ui.cb_remix.isChecked())
         self.ui.add_text_demo.setEnabled(self.ui.cb_demo.isChecked())
 
+        self.ui.words_ep.setEnabled(self.ui.cb_ep.isChecked())
+        self.ui.words_single.setEnabled(self.ui.cb_single.isChecked())
+        self.ui.words_soundtrack.setEnabled(self.ui.cb_soundtrack.isChecked())
+        self.ui.words_live.setEnabled(self.ui.cb_live.isChecked())
+        self.ui.words_remix.setEnabled(self.ui.cb_remix.isChecked())
+        self.ui.words_demo.setEnabled(self.ui.cb_demo.isChecked())
+
     def load(self):
         self.ui.cb_ep.setChecked(self.api.plugin_config['enable_ep'])
         self.ui.cb_single.setChecked(self.api.plugin_config['enable_single'])
@@ -84,6 +81,13 @@ class ReleaseTypeInTitleOptionsPage(OptionsPage):
         self.ui.add_text_live.setText(self.api.plugin_config['text_live'])
         self.ui.add_text_remix.setText(self.api.plugin_config['text_remix'])
         self.ui.add_text_demo.setText(self.api.plugin_config['text_demo'])
+
+        self.ui.words_ep.setText(self.api.plugin_config['words_ep'])
+        self.ui.words_single.setText(self.api.plugin_config['words_single'])
+        self.ui.words_soundtrack.setText(self.api.plugin_config['words_soundtrack'])
+        self.ui.words_live.setText(self.api.plugin_config['words_live'])
+        self.ui.words_remix.setText(self.api.plugin_config['words_remix'])
+        self.ui.words_demo.setText(self.api.plugin_config['words_demo'])
 
         self._set_text_edit_states()
 
@@ -102,6 +106,13 @@ class ReleaseTypeInTitleOptionsPage(OptionsPage):
         self.api.plugin_config['text_remix'] = self.ui.add_text_remix.text()
         self.api.plugin_config['text_demo'] = self.ui.add_text_demo.text()
 
+        self.api.plugin_config['words_ep'] = self.ui.words_ep.text().strip()
+        self.api.plugin_config['words_single'] = self.ui.words_single.text().strip()
+        self.api.plugin_config['words_soundtrack'] = self.ui.words_soundtrack.text().strip()
+        self.api.plugin_config['words_live'] = self.ui.words_live.text().strip()
+        self.api.plugin_config['words_remix'] = self.ui.words_remix.text().strip()
+        self.api.plugin_config['words_demo'] = self.ui.words_demo.text().strip()
+
     def restore_defaults(self):
         super().restore_defaults()
 
@@ -109,9 +120,9 @@ class ReleaseTypeInTitleOptionsPage(OptionsPage):
 def add_release_type(api: PluginApi, album: Album, album_metadata: Metadata, release_metadata: dict):
 
     title: str = album_metadata['album']
-    words = re.findall(r'[a-z0-9\.]+', title.lower())
+    words = set(re.findall(r'[a-z0-9\.]+', title.lower()))
 
-    for r_type, maps in RELEASE_TYPE_MAPPING.items():
+    for r_type in ['ep', 'single', 'soundtrack', 'live', 'remix', 'demo']:
         if not api.plugin_config[f"enable_{r_type}"]:
             continue
 
@@ -128,14 +139,11 @@ def add_release_type(api: PluginApi, album: Album, album_metadata: Metadata, rel
         if replacement.strip().lower() in title.lower():
             continue
 
-        mapped = False
-        for word in maps:
-            if word in words:
-                mapped = True
-                break
+        maps = set(str(api.plugin_config[f"words_{r_type}"]).lower().split())
+        if not maps or words.intersection(maps):
+            continue
 
-        if not mapped:
-            title += f" {replacement}"
+        title += f" {replacement}"
 
     # Update title
     album_metadata['album'] = title
@@ -157,6 +165,12 @@ def enable(api: PluginApi):
     api.plugin_config.register_option('text_live', api.tr("ui.option.live.title", "(Live)"))
     api.plugin_config.register_option('text_remix', api.tr("ui.option.remix.title", "(Remix)"))
     api.plugin_config.register_option('text_demo', api.tr("ui.option.demo.title", "(Demo)"))
+    api.plugin_config.register_option('words_ep', "ep e.p.")
+    api.plugin_config.register_option('words_single', "single")
+    api.plugin_config.register_option('words_soundtrack', "soundtrack")
+    api.plugin_config.register_option('words_live', "live")
+    api.plugin_config.register_option('words_remix', "remix")
+    api.plugin_config.register_option('words_demo', "demo demonstation")
 
     # Register options page
     api.register_options_page(ReleaseTypeInTitleOptionsPage)

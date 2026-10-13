@@ -2,13 +2,15 @@
 "manifest.long_description" = "Ce plugin insère automatiquement les informations relatives au type de publication sélectionné dans le titre de la publication. Il s'inspire du plugin Picard 2 « Release Type » d'Elliot Chance.\n\nLe plugin vérifie le titre existant de la version afin de déterminer si le type de version y figure déjà. Si ce n'est pas le cas et que le type de version fait partie de ceux sélectionnés pour être inclus, celui-ci est ajouté au titre de la version.\n\nLes types de version à inclure et le texte à ajouter sont définis par l'utilisateur dans les paramètres d'options du plugin."
 "manifest.name" = "Indiquer le type de publication dans le titre"
 
+"qt.ReleaseTypeInTitleOptionsPage.label.append_text" = "Ajouter :"
+"qt.ReleaseTypeInTitleOptionsPage.label.words_to_check" = "Mots :"
 "qt.ReleaseTypeInTitleOptionsPage.option.demo.title" = "Démonstration"
 "qt.ReleaseTypeInTitleOptionsPage.option.ep.title" = "EP"
 "qt.ReleaseTypeInTitleOptionsPage.option.live.title" = "En direct"
 "qt.ReleaseTypeInTitleOptionsPage.option.remix.title" = "Remix"
 "qt.ReleaseTypeInTitleOptionsPage.option.single.title" = "Single"
 "qt.ReleaseTypeInTitleOptionsPage.option.soundtrack.title" = "Bande-son"
-"qt.ReleaseTypeInTitleOptionsPage.page.text" = "Ces paramètres déterminent les types de version à inclure dans le titre de la version, ainsi que le texte à utiliser lorsqu'un type est inclus. Seuls les types activés ci-dessous seront pris en compte pour figurer dans le titre de la version."
+"qt.ReleaseTypeInTitleOptionsPage.page.text" = "Ces paramètres déterminent les types de version à inclure dans le titre de la version, ainsi que le texte à utiliser lorsqu'un type est inclus. Seuls les types activés ci-dessous seront pris en compte pour figurer dans le titre de la version.\n\nLe champ « Ajouter » contient le texte à ajouter à la fin du titre.\n\nLe champ « Mots » contient une liste de mots séparés par des espaces qui servent à déterminer si le texte doit être ajouté au titre. Si un mot figure déjà dans le titre, le texte ne sera pas ajouté."
 "qt.ReleaseTypeInTitleOptionsPage.page.title" = "Indiquer le type de publication dans le titre"
 "qt.ReleaseTypeInTitleOptionsPage.section.types_list.title" = "Types de publication à inclure :"
 

@@ -2,13 +2,15 @@
 "manifest.long_description" = "This plugin automatically places selected release type information in the title of the release. It is based on the Picard 2 plugin \"Release Type\" by Elliot Chance.\n\nThe plugin checks the existing release title to determine whether the release type already appears in the title. If not, and the release type is one of those selected for inclusion, the release type is added to the release title.\n\nThe release types to include, and the text to add are defined by the user in the plugin's option settings."
 "manifest.name" = "Release Type in Title"
 
+"qt.ReleaseTypeInTitleOptionsPage.label.append_text" = "Append:"
+"qt.ReleaseTypeInTitleOptionsPage.label.words_to_check" = "Words:"
 "qt.ReleaseTypeInTitleOptionsPage.option.demo.title" = "Demo"
 "qt.ReleaseTypeInTitleOptionsPage.option.ep.title" = "EP"
 "qt.ReleaseTypeInTitleOptionsPage.option.live.title" = "Live"
 "qt.ReleaseTypeInTitleOptionsPage.option.remix.title" = "Remix"
 "qt.ReleaseTypeInTitleOptionsPage.option.single.title" = "Single"
 "qt.ReleaseTypeInTitleOptionsPage.option.soundtrack.title" = "Soundtrack"
-"qt.ReleaseTypeInTitleOptionsPage.page.text" = "These settings will determine the release types to include in the release title, and the text to use when including a type. Only the types enabled below will be checked for inclusion in the release title."
+"qt.ReleaseTypeInTitleOptionsPage.page.text" = "These settings will determine the release types to include in the release title, and the text to use when including a type. Only the types enabled below will be checked for inclusion in the release title.\n\nThe 'Append' field contains the text to append to the title.\n\nThe 'Words' field contains a list of words separated by spaces that are used to determine if the text should be added to the title. If a word is found in the title already, the text will not be added."
 "qt.ReleaseTypeInTitleOptionsPage.page.title" = "Release Type in Title"
 "qt.ReleaseTypeInTitleOptionsPage.section.types_list.title" = "Release types to include:"
 
