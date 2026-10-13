@@ -36,12 +36,11 @@ USER_GUIDE_URL = 'https://picard-plugins-user-guides.readthedocs.io/en/latest/re
 
 
 class ReleaseTypeInTitleOptionsPage(OptionsPage):
-
     TITLE = t_("manifest.name", "Release Type in Title")
     HELP_URL = USER_GUIDE_URL
 
     def __init__(self, parent=None):
-        super(ReleaseTypeInTitleOptionsPage, self).__init__(parent)
+        super().__init__(parent)
         self.ui = Ui_ReleaseTypeInTitleOptionsPage()
         self.ui.setupUi(self)
 

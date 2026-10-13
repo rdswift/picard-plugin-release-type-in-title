@@ -15,3 +15,12 @@ The release types to include, and the text to add are defined by the user in the
 categories = ["metadata"]
 homepage = "https://picard-plugins-user-guides.readthedocs.io/en/latest/release_type_in_title/user_guide.html"
 report_bugs_to = "https://github.com/rdswift/picard-plugin-release-type-in-title/issues"
+
+[name_i18n]
+fr = "Indiquer le type de publication dans le titre"
+
+[description_i18n]
+fr = "Ce plugin insère automatiquement les informations relatives au type de publication sélectionné dans le titre de la publication."
+
+[long_description_i18n]
+fr = "Ce plugin insère automatiquement les informations relatives au type de publication sélectionné dans le titre de la publication. Il s'inspire du plugin Picard 2 « Release Type » d'Elliot Chance.\n\nLe plugin vérifie le titre existant de la version afin de déterminer si le type de version y figure déjà. Si ce n'est pas le cas et que le type de version fait partie de ceux sélectionnés pour être inclus, celui-ci est ajouté au titre de la version.\n\nLes types de version à inclure et le texte à ajouter sont définis par l'utilisateur dans les paramètres d'options du plugin."
